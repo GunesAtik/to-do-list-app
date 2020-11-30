@@ -9,27 +9,23 @@ function newItem(){
    if (inputValue === '') {
      alert('You must write something!');
    } else {
-     $('#list').append(li);
+     list.append(li);
    }
-
-function crossOut {
-  li.toggleClass('strike');
- 	}
 
   li.on.('click', function crossOut() {
       li.toggleClass('strike');
 
-   let deleteButton = $(<deleteButton></deleteButton>);
-   deleteButton.append(document.createTextNode('X'));
-   li.append(deleteButton);
+   let crossOutButton = $(<crossOutButton></crossOutButton>);
+   crossOutButton.append(document.createTextNode('X'));
+   li.append(crossOutButton);
+   crossOutButton.on('click', deleteListItem);
 
- 	deleteButton.on('click', deleteListItem);
   function deleteListItem() {
     li.addClass('delete')
   }
 
-     $('#list').sortable();
-}
+    list.sortable();
+};
 
 
 
