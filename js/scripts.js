@@ -12,10 +12,11 @@ function newItem(){
      list.append(li);
    }
 
-  li.on.('click', function crossOut() {
+  li.on('click', function crossOut() {
       li.toggleClass('strike');
+   })
 
-   let crossOutButton = $(<crossOutButton></crossOutButton>);
+   let crossOutButton = $('<crossOutButton></crossOutButton>');
    crossOutButton.append(document.createTextNode('X'));
    li.append(crossOutButton);
    crossOutButton.on('click', deleteListItem);
